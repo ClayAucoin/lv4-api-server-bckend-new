@@ -7,6 +7,7 @@ import { sendError } from "./utils/sendError.js"
 import rootRouter from "./routes/root.js"
 import moviesRouter from "./routes/movies.js"
 import findMovieRouter from "./routes/find-movie.js"
+import addMovieRouter from "./routes/add-movie.js"
 
 const app = express();
 // const port = 3000;
@@ -19,6 +20,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use("/", rootRouter)
 app.use("/movies", moviesRouter)
 app.use("/find-movie", findMovieRouter)
+app.use("/add-movie", addMovieRouter)
 
 
 export function globalErrorHandler(err, req, res, next) {
